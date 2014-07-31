@@ -95,7 +95,6 @@ void ompl::geometric::RRTstar::setup()
     {
       if (pdef_->hasOptimizationObjective())
       {
-        OMPL_INFORM("RRTStar retrieving optimization objective from problem definition.");
         opt_ = pdef_->getOptimizationObjective();
       }
       else
@@ -106,7 +105,7 @@ void ompl::geometric::RRTstar::setup()
     }
     else
     {
-      OMPL_INFORM("[RRTStar] problem definition is not set, deferring setup completion...");
+      OMPL_INFORM("[%s] problem definition is not set, deferring setup completion.", getName().c_str() );
       setup_ = false;
     }
 }
